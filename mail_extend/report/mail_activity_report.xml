@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="mail_activity_report"
+            model="crm.lead"
+            string="Activities Report"
+            report_type="qweb-pdf"
+            name="mail_extend.report_template"
+        />
+        <template id="report_template">
+            <t t-foreach="docs" t-as="record">
+                <t t-call="web.html_container">
+                    <t t-call="web.internal_layout">
+                        <div class="header">
+                            My Enterprise 
+                        </div>
+                        <div class="page">
+                            <h1>
+                                <span t-field="record.name"></span>
+                            </h1>
+                            <h2>Customer: <span t-field="record.partner_id"></span></h2>
+                            <table style="width:80%">
+                                <tr>
+                                    <td><strong>Expected Revenue: </strong><span t-field="record.expected_revenue"></span></td>
+                                    <td><strong>Expected Closing: </strong><span t-field="record.date_deadline"></span></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><strong>Probability: </strong><span t-field="record.probability"></span>%</td>
+                                    <td><strong>Salesperson: </strong><span t-field="record.user_id"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stage: </strong><span t-field="record.stage_id"></span></td>
+                                </tr>
+                            </table>
+                            <h1>Activities</h1>
+                            <table style="width:100%; text-align:start">
+                                <tr>
+                                    <th>Summary</th>
+                                    <th>Assigned to</th>
+                                    <th>Due Date</th>
+                                    <th>Priority</th>
+                                </tr>
+                                <t t-foreach="record.activity_ids" t-as="activity">
+                                    <tr>
+                                        <td>
+                                            <span t-field="activity.summary"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="activity.user_id"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="activity.date_deadline"></span>
+                                        </td>
+                                        <td>
+                                            <span t-field="activity.priority_level"></span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </div>
+                        <div class="footer">
+                            Contact us: email@company.com
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
