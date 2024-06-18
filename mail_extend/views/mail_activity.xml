@@ -6,8 +6,12 @@
             <field name="model">mail.activity</field>
             <field name="inherit_id" ref="mail.mail_activity_view_form_popup" />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='user_id']" position="after">
-                    <field name="priority_level" />
+                <xpath expr="(//sheet)[1]" position="before">
+                    <header>
+                        <field name="priority_level" widget="statusbar" options="{'clickable': '1'}" />
+                        <field name="res_name" />
+                        <field name="summary" />
+                    </header>
                 </xpath>
                 <xpath expr="//field[@name='summary']" position="after">
                     <field name="attachment" />
@@ -27,6 +31,11 @@
                     <filter string="Middle Priority" name="filter_middle_priority" domain="[('priority_level', '=', 'middle')]" />
                     <filter string="High Priority" name="filter_high_priority" domain="[('priority_level', '=', 'high')]" />
                 </xpath>
+                <xpath expr="//filter[@name='activittype']" position="after">
+                    <filter string="Lead" name="lead_group" context="{'group_by': 'res_name'}"/>
+                    <filter string="Priority" name="priority_group" context="{'group_by': 'priority_level'}"/>
+                  </xpath>
+                
             </field>
         </record>
 
