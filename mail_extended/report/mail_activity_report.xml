@@ -5,7 +5,7 @@
             model="crm.lead"
             string="Activities Report"
             report_type="qweb-pdf"
-            name="mail_extend.report_template"
+            name="mail_extended.report_template"
         />
         <template id="report_template">
             <t t-foreach="docs" t-as="record">

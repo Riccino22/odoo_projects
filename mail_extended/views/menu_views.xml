@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Activities Pipeline" id="mail_extended_activity_menu"
+            action="mail_extended_activity_action" sequence="1" />
+    </data>
+</odoo>

@@ -9,11 +9,9 @@
                 <xpath expr="(//sheet)[1]" position="before">
                     <header>
                         <field name="priority_level" widget="statusbar" options="{'clickable': '1'}" />
-                        <field name="res_name" />
-                        <field name="summary" />
                     </header>
                 </xpath>
-                <xpath expr="//field[@name='summary']" position="after">
+                <xpath expr="//field[@name='date_deadline']" position="after">
                     <field name="attachment" />
                     <field name="favorite" />
                 </xpath>
@@ -26,16 +24,23 @@
             <field name="inherit_id" ref="mail.mail_activity_view_search" />
             <field name="arch" type="xml">
                 <xpath expr="//filter[@name='activities_overdue']" position="before">
-                    <filter string="Favorites" name="filter_favorites" domain="[('favorite', '=', True)]" />
-                    <filter string="Low Priority" name="filter_low_priority" domain="[('priority_level', '=', 'low')]" />
-                    <filter string="Middle Priority" name="filter_middle_priority" domain="[('priority_level', '=', 'middle')]" />
-                    <filter string="High Priority" name="filter_high_priority" domain="[('priority_level', '=', 'high')]" />
+                    <filter string="Favorites" name="filter_favorites"
+                        domain="[('favorite', '=', True)]" />
+                    <filter string="Low Priority" name="filter_low_priority"
+                        domain="[('priority_level', '=', 'low')]" />
+                    <filter string="Middle Priority" name="filter_middle_priority"
+                        domain="[('priority_level', '=', 'middle')]" />
+                    <filter string="High Priority" name="filter_high_priority"
+                        domain="[('priority_level', '=', 'high')]" />
+                    <field name="date_deadline" />
+                    <field name="id" />
                 </xpath>
                 <xpath expr="//filter[@name='activittype']" position="after">
-                    <filter string="Lead" name="lead_group" context="{'group_by': 'res_name'}"/>
-                    <filter string="Priority" name="priority_group" context="{'group_by': 'priority_level'}"/>
-                  </xpath>
-                
+                    <filter string="Lead" name="lead_group" context="{'group_by': 'res_name'}" />
+                    <filter string="Priority" name="priority_group"
+                        context="{'group_by': 'priority_level'}" />
+                </xpath>
+
             </field>
         </record>
 
@@ -52,12 +57,12 @@
             </field>
         </record>
 
-        <record id="mail_extend_activity_action" model="ir.actions.act_window">
+        <record id="mail_extended_activity_action" model="ir.actions.act_window">
             <field name="name">Pipeline Activities</field>
             <field name="res_model">mail.activity</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-    
+
     </data>
 </odoo>

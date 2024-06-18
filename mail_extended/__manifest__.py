@@ -1,11 +1,11 @@
 {
-    'name': 'CRM Extend',
+    'name': 'Extended CRM',
     'version': '1.0',
-    'depends': ['base', 'mail', 'crm', 'sale'],
+    'depends': ['base', 'mail', 'crm'],
     'author': "Ino",
     'category': 'Test',
     'description': """
-        CRM (Activity) extend
+        CRM (Activity Model) extended
     """,
     'data': [
         'views/mail_activity.xml',
