@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--menuitem name="Performance Appraisal" parent="sale.sale_menu_root"
+            id="menu_open_per_appri_req"
+            action="mail_extend.mail_extend_fav_activity_action" sequence="30" /-->
+
+        <menuitem name="Favorite Activities Pipeline" id="mail_extend_activity_menu"
+            action="mail_extend_activity_action" sequence="1" />
+
+
+    </data>
+
+</odoo>

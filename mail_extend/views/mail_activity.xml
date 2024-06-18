@@ -11,8 +11,44 @@
                 </xpath>
                 <xpath expr="//field[@name='summary']" position="after">
                     <field name="attachment" />
+                    <field name="favorite" />
                 </xpath>
             </field>
         </record>
+
+        <record id="view_activity_search_inherit" model="ir.ui.view">
+            <field name="name">mail.activity.search.inherit</field>
+            <field name="model">mail.activity</field>
+            <field name="inherit_id" ref="mail.mail_activity_view_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='activities_overdue']" position="before">
+                    <filter string="Favorites" name="filter_favorites" domain="[('favorite', '=', True)]" />
+                    <filter string="Low Priority" name="filter_low_priority" domain="[('priority_level', '=', 'low')]" />
+                    <filter string="Middle Priority" name="filter_middle_priority" domain="[('priority_level', '=', 'middle')]" />
+                    <filter string="High Priority" name="filter_high_priority" domain="[('priority_level', '=', 'high')]" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_activity_tree_inherit" model="ir.ui.view">
+            <field name="name">mail.activity.tree.inherit</field>
+            <field name="model">mail.activity</field>
+            <field name="inherit_id" ref="mail.mail_activity_view_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_deadline']" position="after">
+                    <field name="favorite" />
+                    <field name="priority_level" />
+                    <field name="id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mail_extend_activity_action" model="ir.actions.act_window">
+            <field name="name">Pipeline Activities</field>
+            <field name="res_model">mail.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    
     </data>
 </odoo>

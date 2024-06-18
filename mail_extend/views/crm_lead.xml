@@ -12,6 +12,16 @@
                     </page>
                 </xpath>
             </field>
-        </record>    
+        </record>
+
+        <!--menuitem
+            id="mail_activity_fav_menu"
+            name="Favorite Activities"
+            action="mms.mms_movie_view_tree"
+            parent="crm_menu_root"
+            sequence="1"
+            /-->    
+
     </data>
+    
 </odoo>

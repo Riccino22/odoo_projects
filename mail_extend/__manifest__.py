@@ -11,6 +11,7 @@
         'views/mail_activity.xml',
         'views/crm_lead.xml',
         'report/mail_activity_report.xml',
+        'views/menu_views.xml',
     ],
     # data files containing optionally loaded demonstration data
     'demo': [
