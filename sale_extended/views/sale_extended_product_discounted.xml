@@ -11,7 +11,7 @@
             <field name="model">sale_extended.product_discounted</field>
             <field name="arch" type="xml">
                 <tree string="Prodcut Discounted">
-                    <field name="str_discount" />
+                    <field name="amount_to_discount" />
                     <field name="product_id" />
                 </tree>
             </field>

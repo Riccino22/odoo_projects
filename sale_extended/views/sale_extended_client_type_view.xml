@@ -15,6 +15,7 @@
                         <group>
                             <field name="name" />
                             <field name="description" />
+                            <field name="discounts" />
                         </group>
                         <notebook>
                             <page name="product_discount_page" string="Products with discount">
