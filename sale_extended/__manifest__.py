@@ -8,8 +8,9 @@
         Sale extended
     """,
     'data': [
+        "views/sale_extended_client_type_view.xml",
+        "views/sale_extended_menu.xml",
+        "views/sale_extended_product_discounted.xml",
+        "security/ir.model.access.csv"
     ],
-    # data files containing optionally loaded demonstration data
-    'demo': [
-    ]
 }

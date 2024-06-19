@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_extended_client_type_action" model="ir.actions.act_window">
+            <field name="name">Client Type</field>
+            <field name="res_model">sale_extended.client_type</field>
+            <field name="view_mode">tree,form</field>
+        </record>        
+        <record id="sale_extended_client_type_form" model="ir.ui.view">
+            <field name="name">sale_extended.client_type.form</field>
+            <field name="model">sale_extended.client_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                        </group>
+                        <notebook>
+                            <page name="product_discount_page" string="Products with discount">
+                                <field name="product_discounted_ids" />                  
+                            </page>
+                        </notebook>
+                    </sheet>    
+                </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

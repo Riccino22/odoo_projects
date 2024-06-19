@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="sale_extended_menu"
+            name="Client Types"
+            action="sale_extended_client_type_action" />
+    </data>
+</odoo>
