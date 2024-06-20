@@ -2,7 +2,7 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 # Definition of the client type model in the sales extension module
-class ProductMod(models.Model):
+class ClientType(models.Model):
     _name = "sale_extended.client_type"
     
     # Fields for the client type model
@@ -16,7 +16,7 @@ class ProductMod(models.Model):
     def _compute_display_name(self):
         for rec in self:
             if len(rec.product_discounted_ids) == 0:
-                rec.display_name = f"{rec.name}"  # No discounts
+                rec.display_name = f"{rec.name} - No discounts"  # No discounts
             elif len(rec.product_discounted_ids) == 1:
                 rec.display_name = f"{rec.name} - {len(rec.product_discounted_ids)} discount"  # Single discount
             elif len(rec.product_discounted_ids) > 1:

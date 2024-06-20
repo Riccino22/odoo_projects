@@ -26,6 +26,15 @@
                 </form>
             </field>
         </record>
+        <record id="sale_extended.client_type_tree" model="ir.ui.view">
+            <field name="name">sale_extended.client_type.tree</field>
+            <field name="model">sale_extended.client_type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name" string="Client type" />
+                </tree>
+            </field>
+        </record>
         
     </data>
 </odoo>

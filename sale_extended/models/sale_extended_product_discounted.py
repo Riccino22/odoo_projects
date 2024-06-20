@@ -8,7 +8,7 @@ class ProductDiscounted(models.Model):
     # Fields for the product discount model
     product_id = fields.Many2one("product.template", string="Product", required=True)  # Many-to-one relationship with product template, required field
     client_type_id = fields.Many2one("sale_extended.client_type", string="Client Type")  # Many-to-one relationship with client type
-    amount_to_discount = fields.Float("Disc %")  # Discount amount in percentage
+    to_discount = fields.Float("Disc %")  # Discount in percentage
 
     # Constraint to ensure unique product-client type combination
     @api.constrains("product_id")

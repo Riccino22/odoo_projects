@@ -13,4 +13,4 @@ class SaleOrderLine(models.Model):
             # Check if the product name matches the selected product in the sale order line
             if product.product_id.name == self.product_id.name:
                 # Assign the discount amount to the discount field
-                self.discount = product.amount_to_discount
+                self.discount = product.to_discount
