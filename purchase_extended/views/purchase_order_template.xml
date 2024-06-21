@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="order">
+            <!-- Only render the order details if the order is visible -->
+            <t t-if="order.visible_order">
+
+                <t t-call="website.layout">
+                    <br />
+                    <div class="container text-center">
+                        <h1 t-esc="order.name" />
+                        <h2>
+                            <strong>Vendor: <span t-esc="order.partner_id.name" /></strong>
+                        </h2>
+                        <br />
+                        <center>
+                            <table class="table" style="width:80%;font-size:15pt">
+                                <tr>
+                                    <th>
+                                        <h3>Product</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Quantity</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Received</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Billed</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Unit Price</h3>
+                                    </th>
+                                    <th>
+                                        <h3>Subtotal</h3>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                <!-- Iterate through each order line and display details -->
+                                <t t-foreach="order.order_line" t-as="order_line">
+                                    <tr>
+                                        <td t-esc="order_line.product_id.name" />
+                                        <td t-esc="order_line.product_qty" />
+                                        <td t-esc="order_line.qty_received" />
+                                        <td t-esc="order_line.qty_invoiced" />
+                                        <td t-esc="order_line.price_unit" />
+                                        <td t-esc="order_line.price_subtotal" />
+                                        <td>
+                                            <!-- Display product image -->
+                                            <img
+                                                t-att-src="'/web/image/product.template/{}/image_1024/{}'.format(order_line.product_id.id, order_line.product_id.display_name)"
+                                                width="100" />
+                                        </td>
+                                    </tr>
+                                </t>
+
+                            </table>
+                            <span>Total:</span>
+                            <!-- Display total amount of the order -->
+                            <h3>$ <span t-esc="order.amount_total" /></h3>
+                        </center>
+                    </div>
+                </t>
+            </t>
+            <!-- Render a 404 page if the order is not visible -->
+            <t t-else="">
+                <t t-call="http_routing.404" />
+            </t>
+        </template>
+    </data>
+</odoo>

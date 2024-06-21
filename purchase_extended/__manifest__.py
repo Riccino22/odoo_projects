@@ -5,14 +5,11 @@
     'author': "Riccino",
     'category': 'Category',
     'description': """
-    An purchase extension module
+    An purchase module extension
     """,
 
     'data': [
         'views/purchase_order.xml',
-        'data/purchase_order_cron.xml'
-    ],
-    # data files containing optionally loaded demonstration data
-    'demo': [
+        'views/purchase_order_template.xml',
     ],
 }
