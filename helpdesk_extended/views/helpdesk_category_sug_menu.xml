@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="helpdesk_category_sug_menu"
+        name="Helpdesk Category Suggested"
+        action="helpdesk_category_sug_action"
+        sequence="10"/>
+
+</odoo>

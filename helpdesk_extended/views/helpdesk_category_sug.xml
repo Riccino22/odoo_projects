@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="helpdesk_category_sug_action" model="ir.actions.act_window">
+            <field name="name">Category Suggested</field>
+            <field name="res_model">helpdesk.category.sug</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="helpdesk_category_sug_form" model="ir.ui.view">
+            <field name="name">helpdesk.category.sug.form</field>
+            <field name="model">helpdesk.category.sug</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Add to categories" name="add_category" type="object"
+                            class="oe_highlight" attrs="{'invisible': [('added', '=', True)]}" />
+                        <!--button
+                        string="Delete from categories" name="delete_category" type="object"
+                        class="oe_highlight" attrs="{'invisible': [('added', '=', True)]}" /-->
+
+                        <button string="Editable" name="change_to_editable" type="object"
+                            class="oe_highlight" attrs="{'invisible': [('editable', '=', True)]}" />
+                        <button string="Non-editable" name="change_to_non_editable" type="object"
+                            class="oe_highlight" attrs="{'invisible': [('editable', '=', False)]}" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="category_name"
+                                attrs="{'readonly': [('editable', '=', False)]}" />
+                            <field name="description"
+                                attrs="{'readonly': [('editable', '=', False)]}" />
+                            <field name="user_id" />
+                            <field name="editable" />
+                            <field name="added" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

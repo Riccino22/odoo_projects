@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="suggestion_sended">
+
+            <t t-call="website.layout">
+                <div class="container text-center">
+                    <center>
+                        <h2>Thank you for your suggestion!</h2>
+                        <p><a href="/">Go to home</a></p>
+                    </center>
+                </div>
+            </t>
+
+        </template>
+    </data>
+</odoo>
