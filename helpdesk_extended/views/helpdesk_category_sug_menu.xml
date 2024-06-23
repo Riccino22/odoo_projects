@@ -3,8 +3,9 @@
 
     <menuitem
         id="helpdesk_category_sug_menu"
-        name="Helpdesk Category Suggested"
+        name="Suggested Categories"
         action="helpdesk_category_sug_action"
+        parent="helpdesk_mgmt.helpdesk_ticket_config_main_menu"
         sequence="10"/>
 
 </odoo>

@@ -13,6 +13,7 @@
         'views/helpdesk_category_sug.xml',
         'views/helpdesk_category_sug_menu.xml',
         'views/category_sug_sended_template.xml',
+        'views/helpdesk_ticket_template.xml'
     ],
     # data files containing optionally loaded demonstration data
     'demo': [

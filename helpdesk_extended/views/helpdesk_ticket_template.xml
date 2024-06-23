@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_create_ticket_inherit" inherit_id="helpdesk_mgmt.portal_create_ticket">
+
+        <xpath expr="//select[@id='category']" position="after">
+            <p>You can suggest new categories <a href="/category_suggest" target="_blank">Here!</a></p>
+        </xpath>
+
+        <xpath expr="//textarea" position="after">
+                <t t-if="descr_err">
+                    <div class="alert alert-danger" role="alert">
+                        Description is very short
+                    </div>
+                </t>
+                <t t-else="">
+                    <p>The description must have more than 15 characters</p>
+                </t>
+        </xpath>
+    </template>
+</odoo>

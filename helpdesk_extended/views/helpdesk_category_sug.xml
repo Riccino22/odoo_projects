@@ -33,8 +33,23 @@
                             <field name="editable" />
                             <field name="added" />
                         </group>
+                        <notebook>
+                            <page name="user_tickets_page">
+                                <field name="user_tickets_ids" />
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record id="helpdesk_category_sug_tree" model="ir.ui.view">
+            <field name="name">helpdesk.category.sug.tree</field>
+            <field name="model">helpdesk.category.sug</field>
+            <field name="arch" type="xml">
+                <tree create="false">
+                    <field name="display_name" string="Name and status" />
+                    <field name="user_tickets_ids" />
+                </tree>
             </field>
         </record>
     </data>
