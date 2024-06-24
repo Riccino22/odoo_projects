@@ -5,10 +5,14 @@
 
             <t t-call="website.layout">
                 <div class="container text-center">
+                    <br/>
+                    <br/>
                     <center>
                         <h2>Thank you for your suggestion!</h2>
                         <p><a href="/">Go to home</a></p>
                     </center>
+                    <br/>
+                    <br/>
                 </div>
             </t>
 

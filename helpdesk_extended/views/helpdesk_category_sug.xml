@@ -13,11 +13,7 @@
                 <form>
                     <header>
                         <button string="Add to categories" name="add_category" type="object"
-                            class="oe_highlight" attrs="{'invisible': [('added', '=', True)]}" />
-                        <!--button
-                        string="Delete from categories" name="delete_category" type="object"
-                        class="oe_highlight" attrs="{'invisible': [('added', '=', True)]}" /-->
-
+                            class="oe_highlight" attrs="{'invisible': [('added_to_categories', '=', True)]}" />
                         <button string="Editable" name="change_to_editable" type="object"
                             class="oe_highlight" attrs="{'invisible': [('editable', '=', True)]}" />
                         <button string="Non-editable" name="change_to_non_editable" type="object"
@@ -31,10 +27,10 @@
                                 attrs="{'readonly': [('editable', '=', False)]}" />
                             <field name="user_id" />
                             <field name="editable" />
-                            <field name="added" />
+                            <field name="added_to_categories" />
                         </group>
                         <notebook>
-                            <page name="user_tickets_page">
+                            <page name="user_tickets_page" string="User tickets">
                                 <field name="user_tickets_ids" />
                             </page>
                         </notebook>
@@ -48,6 +44,8 @@
             <field name="arch" type="xml">
                 <tree create="false">
                     <field name="display_name" string="Name and status" />
+                    <field name="description" />
+                    <field name="user_id" />
                     <field name="user_tickets_ids" />
                 </tree>
             </field>

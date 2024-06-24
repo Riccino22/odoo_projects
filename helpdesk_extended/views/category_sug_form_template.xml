@@ -6,19 +6,23 @@
                 <br />
                 <div class="container text-center">
                     <center>
+                        <br />
                         <form method="post" action="/category_suggest/send">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
-                                <label>Your suggestion for category</label>
-                                <input type="text" name="suggestion" class="form-control" required="true"/>
+                                <label><h3>Your suggestion for category</h3></label>
+                                <input type="text" name="suggestion" class="form-control" required="true" placeholder="New category name"/>
                                 <small class="form-text text-muted">Insert your category suggest</small>
                             </div>
+                            <br/>
                             <div class="form-group">
-                                <label>Category description</label>
-                                <textarea class="form-control" name="description" required="true"></textarea>
+                                <label><h4>Category description</h4></label>
+                                <textarea class="form-control" name="description" required="true" placeholder="Description of your category"></textarea>
                             </div>
+                            <br />
                             <button type="submit" class="btn btn-primary">Suggest</button>
                         </form>
+                        <br/><br/>
                     </center>
                 </div>
             </t>
