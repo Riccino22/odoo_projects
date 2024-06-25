@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="prompt_template_form_inherit" model="ir.ui.view">
+            <field name="name">product.template.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="(//header)[1]" position="inside">
+                    <button string="Generate Price" name="%(inventory_extended.inventory_extended_gen_price_action)d" type="action" context="{'default_product_id' : active_id, 'updated' : False}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

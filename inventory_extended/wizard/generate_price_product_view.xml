@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inventory_extended_gen_price_form" model="ir.ui.view">
+            <field name="name">inventory_extended.gen_price.form</field>
+            <field name="model">inventory_extended.gen_price</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="product_id" />
+                        <field name="details" />
+                        <field name="price" />
+                    </group>
+                    <footer>
+                        <button name="update_price" string="Replace" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn-secondary" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="inventory_extended_gen_price_action" model="ir.actions.act_window">
+            <field name="name">Generate Price</field>
+            <field name="res_model">inventory_extended.gen_price</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="inventory_extended_gen_price_form" />
+            <field name="target">new</field>
+        </record>        
+    </data>
+</odoo>

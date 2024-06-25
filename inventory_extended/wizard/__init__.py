@@ -1,0 +1,1 @@
+from . import generate_price_product
