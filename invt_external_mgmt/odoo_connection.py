@@ -2,13 +2,11 @@ import xmlrpc.client
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
 load_dotenv()
 
 
 class Connection:
     def __init__(self):
-        # Initialize connection parameters
         self.url = "http://localhost:8069"
         self.db = "odoo16db"
         self.username = "riccino"
