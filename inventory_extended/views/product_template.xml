@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="product.product_template_only_form_view" />
             <field name="arch" type="xml">
                 <xpath expr="(//header)[1]" position="inside">
-                    <button string="Generate Price" name="%(inventory_extended.inventory_extended_gen_price_action)d" type="action" context="{'default_product_id' : active_id, 'updated' : False}"/>
+                    <button string="Generate Price" name="%(inventory_extended.inventory_extended_gen_price_action)d" type="action" context="{'default_product_id' : active_id}"/>
                 </xpath>
             </field>
         </record>

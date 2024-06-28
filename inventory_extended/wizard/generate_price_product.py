@@ -5,17 +5,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class GeneratePriceProduct(models.TransientModel):
     _name = "inventory_extended.gen_price"
     _description = "Wizard for generate prices"
 
-    product_id = fields.Many2one("product.template", string="Product")
-    details = fields.Text("Product details")
+    product_id = fields.Many2one("product.template", string="Product", required=True)
     price = fields.Float("Price", compute="_compute_price")
 
     @api.depends("product_id")
     def _compute_price(self):
-        for record in self:
+        for record in self:                
             if record.product_id:
                 # Initialize the language model and define the messages
                 llm = ChatGroq(temperature=0, model_name="llama3-8b-8192")
@@ -28,12 +28,14 @@ class GeneratePriceProduct(models.TransientModel):
                         content="""
                     State as precisely as you can, what is the price of the following product:
                     * {}.
-                    Respond to me with a price for this product, using your criteria to evaluate product prices and information obtained from the Internet.
+                    Respond to me with a price for this product, using your criteria to evaluate product prices.
 
                     Respond to me only with the price you assigned to this product. Your response should follow the following structure:
 
                     price: (the price you chose) $
-                    """.format(record.product_id.name)
+                    """.format(
+                            record.product_id.name
+                        )
                     ),
                 ]
 
@@ -48,5 +50,7 @@ class GeneratePriceProduct(models.TransientModel):
     def update_price(self):
         self.price
         for record in self:
-            product = self.env['product.template'].search([('id', '=', record.product_id.id)])
-            product.write({'list_price': record.price})
+            product = self.env["product.template"].search(
+                [("id", "=", record.product_id.id)]
+            )
+            product.write({"list_price": record.price})
