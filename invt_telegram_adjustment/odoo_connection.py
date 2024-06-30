@@ -31,6 +31,11 @@ class Connection:
             products_list += f"""*ID: {product['id']}* - Name: {product['display_name']}
         On hand: {product['qty_available']} \n"""
         return products_list
+    
+    def get_image(self, product_id):
+        return "{}/web/image/product.product/{}/image_1024/".format(
+            self.url, product_id
+        )
 
     def product_details(self, product_id):
         # Fetch and format product details by ID
@@ -48,10 +53,6 @@ class Connection:
         Invoicing Policy: {product[0]['invoice_policy']}
         """
 
-    def get_image(self, product_id):
-        return "{}/web/image/product.product/{}/image_1024/".format(
-            self.url, product_id
-        )
 
     def adjust_inventory(self, prod_and_qty):
         try:
