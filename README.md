@@ -8,3 +8,6 @@ This is a module that adds two functions to Odoo's stock module: implementing a 
 
 ### [invt_telegram_adjustment](https://github.com/Riccino22/odoo_projects/tree/main/invt_telegram_adjustment)
 This is a Telegram bot for viewing product information and adjusting inventory using the xmlrpc.client library.
+
+### [mail_extended](https://github.com/Riccino22/odoo_projects/tree/main/mail_extended)
+This module extends the mail.activity model, allowing for more detailed views of all activities, assigning priority to them, and printing reports.
