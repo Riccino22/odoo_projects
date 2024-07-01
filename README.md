@@ -11,3 +11,6 @@ This is a Telegram bot for viewing product information and adjusting inventory u
 
 ### [mail_extended](https://github.com/Riccino22/odoo_projects/tree/main/mail_extended)
 This module extends the mail.activity model, allowing for more detailed views of all activities, assigning priority to them, and printing reports.
+
+### [purchase_extended](https://github.com/Riccino22/odoo_projects/tree/main/purchase_extended)
+An extension of the purchase module that performs the following actions: sends an error message if a record is saved without data in the order lines, sends an error message if a user tries to delete a record with a date earlier than the can_delete_after field, and allows visibility of certain purchase orders from the website.
