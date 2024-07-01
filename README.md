@@ -14,3 +14,6 @@ This module extends the mail.activity model, allowing for more detailed views of
 
 ### [purchase_extended](https://github.com/Riccino22/odoo_projects/tree/main/purchase_extended)
 An extension of the purchase module that performs the following actions: sends an error message if a record is saved without data in the order lines, sends an error message if a user tries to delete a record with a date earlier than the can_delete_after field, and allows visibility of certain purchase orders from the website.
+
+### [sale_extended](https://github.com/Riccino22/odoo_projects/tree/main/sale_extended)
+This module extends Odoo's sales module, allowing for the creation of customer types with varying product discounts based on their customer type.
